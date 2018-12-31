@@ -13,7 +13,7 @@ pred_x = np.asarray([
     [5.9, 3.0, 4.2, 1.5,],
     [6.9, 3.1, 5.4, 2.1]])
 
-pred_x = min_max_normalized(prediction_data)
+pred_x = min_max_normalized(pred_x)
 
 X = tf.placeholder(dtype=tf.float32, shape=[None, 4])
 
