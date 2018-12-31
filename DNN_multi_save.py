@@ -81,7 +81,7 @@ with tf.Session() as sess:
         print('checkpoint restored:', ckpt.model_checkpoint_path)
 
     # train the model epochs
-    for i in range(n_epochs):
+    for i in range(n_epochs+2): #to turn the final step into a checkpoint
         total_loss = 0.0
         total_correct_preds = 0.0
         batch_index = np.random.choice(len(train_x), size=batch_size)
