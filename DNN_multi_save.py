@@ -75,7 +75,7 @@ with tf.Session() as sess:
     sess.run(tf.local_variables_initializer()) #for metric.accuracy's local variables
 
     # check if there is a checkpoint, restore it if there is. if there isn’t, train from the start
-    ckpt = tf.train.get_checkpoint_state(os.path.dirname('checkpoint_directory/DNN_multi_save_var'))
+    ckpt = tf.train.get_checkpoint_state(os.path.dirname('checkpoint_directory/DNN_multi_save'))
     if ckpt and ckpt.model_checkpoint_path:
         saver.restore(sess, ckpt.model_checkpoint_path)
         print('checkpoint restored:', ckpt.model_checkpoint_path)
