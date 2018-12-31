@@ -112,6 +112,7 @@ with tf.Session() as sess:
 
     print('accuracy per class:\nIris-setosa: {:.2f}%, Iris-versicolor: {:.2f}%, Iris-virginica: {:.2f}%'.format(accuracy_class[0],accuracy_class[1],accuracy_class[2]))
 
+    #Step 8: predict/ inference
     prediction_output = sess.run(model(X),{X:pred_x})
     class_names = ['Iris-setosa','Iris-versicolor','Iris-virginica']
 
@@ -121,10 +122,9 @@ with tf.Session() as sess:
         p = sess.run(tf.nn.softmax(logits)[class_idx])
         name = class_names[class_idx]
         print("Example {} prediction: {} ({:4.1f}%)".format(i, name, 100 * p))
-
-    #no need x axis epoch
+        
     plt.figure(1)
-    plt.plot(v_loss)
+    plt.plot(v_loss) #no need x axis epoch
     plt.title('Cross Entropy Loss')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
